@@ -1,0 +1,9 @@
+<div class = "contents row" >
+  <% @posts.each do |post| %>
+    <div class = "content_post" >
+      <p><%= post.book %></p>
+      <p><%= post.title %></p>
+      <p><%= post.description %></p>
+    </div>
+  <% end %>
+</div>
