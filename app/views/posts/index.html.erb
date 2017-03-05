@@ -123,16 +123,15 @@
                          <div class="col-sm-3">
                          </div>
 
-                         <!-- main col middle -->
+                         <!-- main col middle タイムライン-->
                          <div class="col-sm-6">
 
                               <div class="panel panel-default">
-                                <div class="panel-thumbnail"><img src="/assets/example/bg_5.jpg" class="img-responsive"></div>
+                                <div class="panel-thumbnail"><img src="assets/sample.jpg" class="img-responsive"></div>
                                 <div class="panel-body">
-                                  <p class="lead">Urbanization</p>
                                       <% @posts.each do |post| %>
                                         <div class = "content_post" >
-                                          <p><%= post.book %></p>
+                                          <p class="lead"><%= post.book %></p>
                                           <p><%= post.title %></p>
                                           <p><%= post.description %></p>
                                         </div>
