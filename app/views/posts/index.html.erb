@@ -1,3 +1,4 @@
+<!--
 <div class = "contents row" >
   <% @posts.each do |post| %>
     <div class = "content_post" >
@@ -7,6 +8,7 @@
     </div>
   <% end %>
 </div>
+-->
 
 
 <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ここからはサンプルからの引用↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
@@ -128,6 +130,13 @@
                                 <div class="panel-thumbnail"><img src="/assets/example/bg_5.jpg" class="img-responsive"></div>
                                 <div class="panel-body">
                                   <p class="lead">Urbanization</p>
+                                      <% @posts.each do |post| %>
+                                        <div class = "content_post" >
+                                          <p><%= post.book %></p>
+                                          <p><%= post.title %></p>
+                                          <p><%= post.description %></p>
+                                        </div>
+                                      <% end %>
                                   <p>45 Followers, 13 Posts</p>
 
                                   <p>
