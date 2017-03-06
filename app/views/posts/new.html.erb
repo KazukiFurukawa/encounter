@@ -1,11 +1,12 @@
+<br><br><br><br>
 <div class="contents row">
   <%= form_tag('/posts', method: :post) do %>
     <h3>
       投稿する
     </h3>
-    <input placeholder="本のタイトル" type="text" name="book">
-    <input placeholder="表題" type="text" name="title">
-    <textarea cols="30" name="text" placeholder="感想" rows="10"></textarea>
-    <input type="submit" value="SENT">
+    <p><input placeholder="本のタイトル" type="text" name="book"></p>
+    <p><input placeholder="表題" type="text" name="title"></p>
+    <p><textarea cols="30" name="description" placeholder="感想" rows="10"></textarea></p>
+    <p><input type="submit" value="SENT"></p>
   <% end %>
 </div>
