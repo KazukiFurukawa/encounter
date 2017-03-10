@@ -62,10 +62,15 @@
           <li>
             <a href="#"><span class="badge">badge</span></a>
           </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <%= link_to 'ログアウト', destroy_user_session_path, class: 'delete' %>
-        </ul>
+            <span><%= current_user.user_name %>
+            <ul class="user__info">
+              <li>
+                <a href="/users/<%= current_user.id %>">マイページ</a>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+      </ul>
       <!--サインインしていない時の表示-->
         <% else %>
           <li>
