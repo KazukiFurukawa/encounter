@@ -83,6 +83,10 @@
                                           <p class="lead"><%= post.book %></p>
                                           <p><%= post.title %></p>
                                           <p><%= post.description %></p>
+                                          <span>投稿者</span>
+                                          <a href="">
+                                            <%= post.user.user_name %>
+                                          </a>
                                         </div>
                                       <% end %>
                                   <p>45 Followers, 13 Posts</p>
