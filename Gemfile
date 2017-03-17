@@ -54,4 +54,4 @@ group :production, :staging do
 end
 
 gem 'devise'
-
+gem 'acts_in_relation'
