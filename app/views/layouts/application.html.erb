@@ -44,6 +44,7 @@
           <ul class="nav navbar-nav navbar-right">
             <!--サインインしている時の表示-->
             <% if user_signed_in? %>
+              <%= current_user.user_name %>
               <li>
                 <a href="#"><i class="glyphicon glyphicon-home"></i> ホーム</a>
               </li>
@@ -54,16 +55,11 @@
                 <%= link_to '感想を書く', '/new'%>
               </li>
               <li>
-                <a href="#"><span class="badge">badge</span></a>
+                <a href="/users/<%= current_user.id %>"><span class="badge">マイページ</span></a>
               </li>
-              <span><%= current_user.user_name %>
-                <ul class="user__info">
-                  <li>
-                    <a href="/users/<%= current_user.id %>">マイページ</a>
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </span>
+              <li>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
             <!--サインインしていない時の表示-->
             <% else %>
               <li>
@@ -88,9 +84,9 @@
     <%= yield %>
 
     <footer>
-      <p>
-        Copyright Encounter 2017.
-      </p>
+      <div align="right">
+        Copyright Encounter 2017　　
+      </div>
     </footer>
   </body>
 </html>
