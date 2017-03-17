@@ -21,65 +21,61 @@
     </script>
   </head>
 
+
   <body>
     <!-- top nav -->
     <div class="navbar navbar-blue navbar-static-top">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!--ロゴ-->
-        <a href="/" class="navbar-brand logo">Encounter</a>
-      </div>
-
-      <nav class="collapse navbar-collapse" role="navigation">
-        <!--検索フォーム、幅を広くする必要あり-->
-        <form class="navbar-form navbar-left">
-          <div class="input-group input-group-sm" style="max-width:720px">
-            <input type="text" class="form-control" placeholder="本の名前、もしくはユーザー名" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit">検索</button>
+      <div class="container">
+        <div class="navbar-header">
+          <!--ロゴ-->
+          <a href="/" class="navbar-brand logo">Encounter</a>
+        </div>
+        <div class="collapse navbar-collapse" role="navigation">
+          <!--検索フォーム、幅を広くする必要あり-->
+          <form class="navbar-form navbar-left">
+            <div class="input-group input-group-sm" style="max-width:720px">
+              <input type="text" class="form-control" placeholder="本の名前、もしくはユーザー名" name="srch-term" id="srch-term">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">検索</button>
+              </div>
             </div>
-          </div>
-        </form>
-        <!--その他ナビゲーション要素-->
-        <ul class="nav navbar-nav">
-          <!--サインインしている時の表示-->
-          <% if user_signed_in? %>
-            <li>
-              <a href="#"><i class="glyphicon glyphicon-home"></i> ホーム</a>
-            </li>
-            <li>
-              <!--感想を書く、javascriptが効いたいい表示なので残しておく
-              <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> 感想をかく</a>
+          </form>
+          <!--その他ナビゲーション要素-->
+          <ul class="nav navbar-nav navbar-right">
+            <!--サインインしている時の表示-->
+            <% if user_signed_in? %>
+              <li>
+                <a href="#"><i class="glyphicon glyphicon-home"></i> ホーム</a>
+              </li>
+              <li>
+                <!--感想を書く、javascriptが効いたいい表示なので残しておく
+                <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> 感想をかく</a>
               -->
-              <%= link_to '感想を書く', '/new'%>
-            </li>
-            <li>
-              <a href="#"><span class="badge">badge</span></a>
-            </li>
-            <span><%= current_user.user_name %>
-              <ul class="user__info">
-                <li>
-                  <a href="/users/<%= current_user.id %>">マイページ</a>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-          <!--サインインしていない時の表示-->
-          <% else %>
-            <li>
-              <%= link_to 'ログイン', new_user_session_path, class: 'post' %>
-            </li>
-            <li>
-              <%= link_to '新規登録', new_user_registration_path, class: 'post' %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+                <%= link_to '感想を書く', '/new'%>
+              </li>
+              <li>
+                <a href="#"><span class="badge">badge</span></a>
+              </li>
+              <span><%= current_user.user_name %>
+                <ul class="user__info">
+                  <li>
+                    <a href="/users/<%= current_user.id %>">マイページ</a>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </span>
+            <!--サインインしていない時の表示-->
+            <% else %>
+              <li>
+                <%= link_to 'ログイン', new_user_session_path, class: 'post' %>
+              </li>
+              <li>
+                <%= link_to '新規登録', new_user_registration_path, class: 'post' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
         <!-- /top nav -->
 
